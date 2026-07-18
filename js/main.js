@@ -16,9 +16,8 @@
 
     // email
     if (SITE.email) {
-      const mail = $('#contactMail');
-      mail.textContent = SITE.email;
-      mail.href = 'mailto:' + SITE.email;
+      // label stays as authored ("Send an email ↗"); only wire the address
+      $('#contactMail').href = 'mailto:' + SITE.email;
     }
 
     // portfolios (nav + about + footer)
