@@ -317,7 +317,9 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 .about__facts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:26px 30px; margin:0 0 42px; padding-top:34px; border-top:1px solid var(--line); }
 .about__facts dt{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:8px; }
 .about__facts dd{ font-size:15px; line-height:1.45; }
-.about__links{ display:flex; gap:24px; flex-wrap:wrap; }
+.about__links{ display:flex; gap:24px; flex-wrap:wrap; align-items:center; }
+.about__resume{ display:inline-flex; align-items:center; font-size:15px; padding:13px 26px; border-radius:100px; background:var(--ink); color:var(--paper); transition:.35s var(--ease); }
+.about__resume:hover{ transform:translateY(-2px); opacity:.85; }
 .about__portfolio{ font-size:15px; border-bottom:1px solid var(--line); padding-bottom:4px; transition:.3s; cursor:pointer; }
 .about__portfolio:hover{ border-color:var(--fg); }
 
