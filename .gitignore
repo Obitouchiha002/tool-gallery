@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+.vercel
+*.log
+_audit*.html
+_test.html
+_m.html
+_f.html
+_d.html
+_frame.html
