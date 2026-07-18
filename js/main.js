@@ -291,10 +291,56 @@
     }));
   }
 
+  /* ---------------- hide nav on scroll down ---------------- */
+  function navAutoHide() {
+    const nav = $('.nav');
+    if (!nav) return;
+    let last = 0;
+    addEventListener('scroll', () => {
+      const y = window.scrollY;
+      // only hide once past the header area, and never while near the top
+      if (y > 120 && y > last) nav.classList.add('nav--hidden');
+      else nav.classList.remove('nav--hidden');
+      last = y;
+    }, { passive: true });
+  }
+
+  /* ---------------- visibility helpers ---------------- */
+  const ANIMATED = '[data-reveal], .card, .seo-row, .flag__stat, .flag__chips span,' +
+                   '.flag__media, .flag__label, .flag__title, .flag__tagline,' +
+                   '.skillcol, .section-head__title, .skills__title, .skills__sub,' +
+                   '.seo__title, .seo__tag, .seo__note, .about__text span > *,' +
+                   '.hero__title [data-word]';
+
+  function revealAll() {
+    $$(ANIMATED).forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    $$('.card').forEach(c => c.classList.add('in'));
+  }
+
+  // Last-resort net: nothing should ever stay invisible, whatever the animation
+  // library or ScrollTrigger does. Catches both opacity:0 and off-canvas
+  // transforms (hero words are translated out of an overflow:hidden line).
+  function visibilitySafetyNet() {
+    setTimeout(() => {
+      $$(ANIMATED).forEach(el => {
+        const s = getComputedStyle(el);
+        const hidden = parseFloat(s.opacity) < 0.05 ||
+                       (el.matches('.hero__title [data-word]') && s.transform !== 'none');
+        if (hidden) { el.style.opacity = '1'; el.style.transform = 'none'; }
+      });
+    }, 4000);
+  }
+
   /* ---------------- GSAP reveals ---------------- */
   function animate() {
-    if (typeof gsap === 'undefined') { $$('[data-reveal]').forEach(e => e.style.opacity = 1); return; }
+    if (typeof gsap === 'undefined') { revealAll(); return; }
     gsap.registerPlugin(ScrollTrigger);
+
+    // Scroll-triggered reveals only where ScrollTrigger is reliable.
+    // On touch (and reduced motion) they can fail to fire and leave content
+    // stuck at opacity:0 — so there we just show everything.
+    const scrollAnim = !isTouch && !reduceMotion;
+    if (!scrollAnim) revealAll();
 
     // hero words
     gsap.set('.hero__title [data-word]', { yPercent: 110 });
@@ -308,6 +354,8 @@
       yPercent: 110, duration: 1, stagger: .12, ease: 'expo.out',
       scrollTrigger: { trigger: '.about__text', start: 'top 75%' }
     });
+
+    if (!scrollAnim) return;   // hero intro above already ran; skip scroll reveals
 
     // flagship
     $('#flagship') && gsap.from('.flag__label, .flag__title, .flag__tagline', {
@@ -393,6 +441,10 @@
     buildSEO();
     cursor();
     smoothScroll();
+    navAutoHide();
     preload();
+    visibilitySafetyNet();
+    // layout settles after images/fonts load — recalc trigger positions
+    addEventListener('load', () => { window.ScrollTrigger && ScrollTrigger.refresh(); });
   });
 })();
