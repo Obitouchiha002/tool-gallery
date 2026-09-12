@@ -230,7 +230,9 @@ const socials = SITE.socials.filter(s => s.url).map(s =>
    JSON-LD  —  only facts that are already on the page. No ratings, no
    download counts, no pricing, no awards.
    ========================================================================= */
-const PERSON_ID = 'https://vanshkashyap.lzworth.in/#vansh-kashyap';
+// Canonical, permanent identifier for Vansh across every site he owns.
+// Never mint a second Person node — everything references this @id.
+const PERSON_ID = 'https://vanshkashyap.lzworth.in/#person';
 
 const schemaTypeOf = p =>
   (p.platforms || []).some(x => /android|windows|macos/i.test(x))
@@ -334,7 +336,7 @@ const jsonld = {
       sameAs: [
         'https://vanshkashyap.lzworth.in/',
         'https://techbyvansh.lzworth.in/',
-        'https://www.linkedin.com/in/vansh-kashyap-32a46a2a6',
+        'https://www.linkedin.com/in/techbyvansh',
         'https://github.com/Obitouchiha002',
         'https://youtube.com/@techbyvansh',
         'https://instagram.com/vanshkashyap70'

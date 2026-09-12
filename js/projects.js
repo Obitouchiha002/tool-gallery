@@ -331,7 +331,7 @@ window.SITE = {
     { label: "Tech by Vansh (mirror)", url: "https://techbyvansh.vercel.app" }
   ],
   socials: [
-    { label: "LinkedIn",  url: "https://www.linkedin.com/in/vansh-kashyap-32a46a2a6" },
+    { label: "LinkedIn",  url: "https://www.linkedin.com/in/techbyvansh" },
     { label: "YouTube",   url: "https://youtube.com/@techbyvansh" },
     { label: "Instagram", url: "https://instagram.com/vanshkashyap70" },
     { label: "GitHub",    url: "https://github.com/Obitouchiha002" },
