@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vansh Kashyap — Tool Gallery</title>
-  <meta name="description" content="A gallery of AI tools, dashboards, web apps & automations built end-to-end by Vansh Kashyap — React & AI automation developer." />
+  <meta name="description" content="A gallery of Android apps, desktop software, AI tools, dashboards, web apps & automations built end-to-end by Vansh Kashyap — co-founder of LZ Worth." />
   <meta name="author" content="Vansh Kashyap" />
   <meta name="theme-color" content="#f3f2ee" />
 
@@ -15,13 +15,13 @@
   <meta property="og:site_name" content="Vansh Kashyap — Tool Gallery" />
   <meta property="og:url" content="https://vansh-tools.vercel.app/" />
   <meta property="og:title" content="Vansh Kashyap — Tool Gallery" />
-  <meta property="og:description" content="A living archive of AI tools, dashboards, web apps & automations — including JanamJyot, a complete Vedic astrology product." />
+  <meta property="og:description" content="A living archive of Android apps, desktop software, AI tools, web apps & automations — including StreamGarden, TrueVault and JanamJyot." />
   <meta property="og:image" content="https://vansh-tools.vercel.app/images/janamjyot.jpg" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="800" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Vansh Kashyap — Tool Gallery" />
-  <meta name="twitter:description" content="A living archive of AI tools, dashboards, web apps & automations." />
+  <meta name="twitter:description" content="A living archive of Android apps, desktop software, AI tools, web apps & automations." />
   <meta name="twitter:image" content="https://vansh-tools.vercel.app/images/janamjyot.jpg" />
 
   <!-- structured data -->
@@ -30,13 +30,21 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Vansh Kashyap",
-    "jobTitle": "React & AI Automation Developer",
+    "jobTitle": "Co-founder, LZ Worth — Web, Mobile & AI Automation Developer",
     "email": "mailto:vk1234888i@gmail.com",
     "url": "https://vansh-tools.vercel.app/",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "LZ Worth",
+      "url": "https://lzworth.in"
+    },
     "sameAs": [
       "https://www.linkedin.com/in/vansh-kashyap-32a46a2a6",
       "https://youtube.com/@techbyvansh",
       "https://instagram.com/vanshkashyap70",
+      "https://github.com/Obitouchiha002",
+      "https://vanshkashyap.lzworth.in",
+      "https://techbyvansh.lzworth.in",
       "https://vanshkashyap.vercel.app",
       "https://techbyvansh.vercel.app"
     ]
@@ -73,6 +81,7 @@
     <a href="#top" class="nav__logo" data-hover>VK<span>·</span>gallery</a>
     <nav class="nav__links">
       <a href="#work" data-hover>Work</a>
+      <a href="#venture" data-hover>LZ Worth</a>
       <a href="#seo" data-hover>Clients</a>
       <a href="#skills" data-hover>Skills</a>
       <a href="#about" data-hover>About</a>
@@ -99,8 +108,8 @@
 
       <div class="hero__bottom">
         <p class="hero__desc" data-reveal>
-          A living archive of apps, dashboards, utilities &amp; automations —
-          built end&#8209;to&#8209;end by <b id="heroName">Vansh Kashyap</b>.
+          A living archive of Android apps, desktop software, web apps
+          &amp; automations — built end&#8209;to&#8209;end by <b id="heroName">Vansh Kashyap</b>.
         </p>
         <a href="#work" class="hero__scroll" data-hover>
           <span>Scroll to explore</span>
@@ -169,6 +178,35 @@
       </div>
     </section>
 
+    <!-- ============ VENTURE / LZ WORTH ============ -->
+    <section class="vent invert" id="venture">
+      <div class="vent__head">
+        <span class="vent__label" id="ventRole">◆ Co-founder</span>
+        <h2 class="vent__title" id="ventTitle">LZ Worth</h2>
+        <p class="vent__tagline" id="ventTagline"></p>
+      </div>
+
+      <div class="flag__stats" id="ventStats"><!-- injected --></div>
+
+      <div class="vent__cols">
+        <a class="vent__media" id="ventMedia" target="_blank" rel="noopener">
+          <div class="flag__bar">
+            <span class="card__dots"><i></i><i></i><i></i></span>
+            <span class="card__url" id="ventUrl"></span>
+            <span class="card__status">Live</span>
+          </div>
+          <div class="vent__shot"><img id="ventImg" alt="LZ Worth" loading="lazy" /></div>
+        </a>
+        <div class="vent__intro">
+          <p class="vent__desc" id="ventDesc"></p>
+          <a class="btn btn--solid" id="ventVisit" target="_blank" rel="noopener">Visit lzworth.in ↗</a>
+        </div>
+      </div>
+
+      <h3 class="vent__sub">What the studio runs</h3>
+      <div class="vent__divs" id="ventDivs"><!-- injected --></div>
+    </section>
+
     <!-- ============ SEO / CLIENT SITES ============ -->
     <section class="seo" id="seo">
       <div class="seo__head">
@@ -195,16 +233,16 @@
     <section class="about" id="about">
       <span class="about__label" data-reveal>(About)</span>
       <p class="about__text">
-        <span data-line>I'm a web developer and</span>
-        <span data-line>AI automation engineer.</span>
+        <span data-line>I build for the web, for Android</span>
+        <span data-line>and for the desktop — plus the</span>
+        <span data-line>AI automations behind them.</span>
         <span data-line>This gallery collects everything</span>
-        <span data-line>I've shipped — from AI dashboards</span>
-        <span data-line>to everyday utilities. Each tool</span>
-        <span data-line>solves a real problem, end to end.</span>
+        <span data-line>I've shipped. Each tool solves</span>
+        <span data-line>a real problem, end to end.</span>
       </p>
       <dl class="about__facts">
-        <div><dt>Role</dt><dd>React &amp; AI Automation Developer</dd></div>
-        <div><dt>Currently</dt><dd>Full-time web developer at Grivaa Capital</dd></div>
+        <div><dt>Role</dt><dd>Web, Mobile &amp; AI Automation Developer</dd></div>
+        <div><dt>Currently</dt><dd>Co-founder at LZ Worth · Web developer at Grivaa Capital</dd></div>
         <div><dt>Based in</dt><dd>Delhi · Working remote</dd></div>
         <div><dt>Open to</dt><dd>Freelance projects &amp; full-time roles</dd></div>
       </dl>

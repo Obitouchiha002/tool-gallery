@@ -66,7 +66,7 @@
 
   /* ---------------- marquee ---------------- */
   function buildMarquee() {
-    const words = ['AI Tools', 'Web Apps', 'Automation', 'Dashboards', 'Utilities', 'Full-Stack'];
+    const words = ['Android Apps', 'AI Tools', 'Desktop Software', 'Web Apps', 'Automation', 'Dashboards', 'Utilities'];
     const track = $('#marquee');
     let html = words.map(w => `<span>${w}</span>`).join('');
     track.innerHTML = html + html; // duplicate for loop
@@ -134,6 +134,9 @@
         ? `<img class="card__img" src="${p.thumbnail}" alt="${p.name}" loading="lazy"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">${ph}`
         : ph;
+      // "Android · Windows · macOS" — only for the apps that ship on real platforms
+      const plat = (p.platforms || []).length
+        ? `<span class="card__plat">${p.platforms.join(' · ')}</span>` : '';
 
       card.innerHTML = `
         <div class="card__window">
@@ -144,6 +147,7 @@
           </div>
           <div class="card__media">
             <span class="card__cat">${p.category}</span>
+            ${plat}
             ${media}
             <div class="card__view"><span>${p.link ? 'Visit site ↗' : 'Coming soon'}</span></div>
           </div>
@@ -184,6 +188,43 @@
       .map(s => `<div class="flag__stat"><b>${s.num}</b><span>${s.label}</span></div>`).join('');
     $('#flagFeatures').innerHTML = (F.features || []).map(f => `<span>${f}</span>`).join('');
     $('#flagAdvisors').innerHTML = (F.advisors || []).map(a => `<span>${a}</span>`).join('');
+  }
+
+  /* ---------------- venture band (LZ Worth) ---------------- */
+  function buildVenture() {
+    const V = window.VENTURE;
+    const sec = $('#venture');
+    if (!V || !sec) { sec && (sec.style.display = 'none'); return; }
+
+    $('#ventRole').textContent = '◆ ' + (V.role || 'Venture');
+    $('#ventTitle').textContent = V.name;
+    $('#ventTagline').textContent = V.tagline || '';
+    $('#ventDesc').textContent = V.description || '';
+
+    const host = (V.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace(/^www\./, '');
+    $('#ventUrl').textContent = host;
+    $('#ventVisit').href = V.url || '#';
+    $('#ventVisit').textContent = 'Visit ' + host + ' ↗';
+    $('#ventMedia').href = V.url || '#';
+    $('#ventImg').src = V.thumbnail || '';
+    $('#ventImg').alt = V.name + ' — ' + (V.tagline || '');
+
+    $('#ventStats').innerHTML = (V.stats || [])
+      .map(s => `<div class="flag__stat"><b>${s.num}</b><span>${s.label}</span></div>`).join('');
+
+    $('#ventDivs').innerHTML = (V.divisions || []).map(d => {
+      const dHost = (d.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '');
+      return `
+        <a class="vdiv" href="${d.url}" target="_blank" rel="noopener" data-hover
+           aria-label="${d.name} — open ${dHost}">
+          <div class="vdiv__shot"><img src="${d.thumbnail}" alt="${d.name}" loading="lazy"></div>
+          <div class="vdiv__body">
+            <h4 class="vdiv__name">${d.name} <i>↗</i></h4>
+            <p class="vdiv__desc">${d.description}</p>
+            <span class="vdiv__url">${dHost}</span>
+          </div>
+        </a>`;
+    }).join('');
   }
 
   /* ---------------- SEO list + floating preview ---------------- */
@@ -305,10 +346,11 @@
   }
 
   /* ---------------- visibility helpers ---------------- */
-  const ANIMATED = '[data-reveal], .card, .seo-row, .flag__stat, .flag__chips span,' +
+  const ANIMATED = '[data-reveal], .card, .seo-row, .vdiv, .flag__stat, .flag__chips span,' +
                    '.flag__media, .flag__label, .flag__title, .flag__tagline,' +
                    '.skillcol, .section-head__title, .skills__title, .skills__sub,' +
                    '.seo__title, .seo__tag, .seo__note, .about__text span > *,' +
+                   '.vent__label, .vent__title, .vent__tagline, .vent__media,' +
                    '.hero__title [data-word]';
 
   function revealAll() {
@@ -374,6 +416,20 @@
       scrollTrigger: { trigger: '.flag__cols', start: 'top 85%' }
     });
 
+    // venture band
+    $('#venture') && gsap.from('.vent__label, .vent__title, .vent__tagline', {
+      y: 44, opacity: 0, duration: 1, stagger: .09, ease: 'power3.out',
+      scrollTrigger: { trigger: '.vent__head', start: 'top 82%' }
+    });
+    $('.vent__media') && gsap.from('.vent__media', {
+      y: 60, opacity: 0, duration: 1.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.vent__media', start: 'top 88%' }
+    });
+    gsap.utils.toArray('.vdiv').forEach((d, i) => {
+      gsap.from(d, { y: 34, opacity: 0, duration: .8, ease: 'power3.out',
+        scrollTrigger: { trigger: d, start: 'top 92%' }, delay: (i % 3) * .06 });
+    });
+
     // seo rows
     gsap.utils.toArray('.seo-row').forEach(r => {
       gsap.from(r, { y: 30, opacity: 0, duration: .8, ease: 'power3.out',
@@ -437,6 +493,7 @@
     buildFlagship();
     buildFilters();
     buildGrid();
+    buildVenture();
     buildSEO();
     cursor();
     smoothScroll();

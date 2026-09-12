@@ -241,6 +241,14 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 .card__img{ width:100%; height:100%; object-fit:cover; object-position:top; transition:transform 1.2s var(--ease), filter .6s; filter:grayscale(.6) contrast(1.02); }
 .card:hover .card__img{ transform:scale(1.05); filter:grayscale(0); }
 .card__cat{ position:absolute; top:12px; left:12px; z-index:3; font-size:10px; letter-spacing:.08em; text-transform:uppercase; padding:5px 11px; border-radius:100px; background:rgba(243,242,238,.92); backdrop-filter:blur(6px); color:var(--ink); border:1px solid var(--line); }
+.card__plat{
+  position:absolute; top:12px; right:12px; z-index:3;
+  font-size:9.5px; letter-spacing:.09em; text-transform:uppercase;
+  padding:5px 10px; border-radius:100px;
+  background:rgba(11,11,11,.82); backdrop-filter:blur(6px);
+  color:#f3f2ee; border:1px solid rgba(243,242,238,.18);
+}
+@media (max-width:420px){ .card__plat{ display:none; } }
 .card__view{ position:absolute; inset:0; z-index:2; display:flex; align-items:center; justify-content:center; opacity:0; background:rgba(11,11,11,.14); backdrop-filter:blur(1px); transition:opacity .4s var(--ease); }
 .card__view span{ font-size:13px; letter-spacing:.01em; padding:11px 22px; border-radius:100px; background:var(--ink); color:var(--paper); transform:translateY(12px); transition:transform .45s var(--ease); }
 .card:hover .card__view{ opacity:1; }
@@ -257,6 +265,44 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 .card__desc{ padding:5px 2px 0; color:var(--ink-dim); font-size:13.5px; max-width:96%; }
 .card__tech{ display:flex; flex-wrap:wrap; gap:7px; padding:12px 2px 0; }
 .card__tech span{ font-size:10.5px; letter-spacing:.03em; color:var(--ink-dim); padding:4px 9px; border:1px solid var(--line); border-radius:100px; }
+
+/* ---------- VENTURE band (LZ Worth) ---------- */
+.vent{ padding:clamp(70px,9vw,130px) var(--pad) clamp(70px,9vw,120px); }
+.vent__head{ max-width:900px; }
+.vent__label{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-dim); }
+.vent__title{ font-family:'Space Grotesk'; font-weight:600; font-size:clamp(46px,10vw,150px); line-height:.92; letter-spacing:-.04em; margin:14px 0 10px; }
+.vent__tagline{ font-family:'Space Grotesk'; font-size:clamp(18px,2.6vw,36px); font-weight:400; letter-spacing:-.02em; opacity:.62; }
+
+.vent__cols{ display:grid; grid-template-columns:1.25fr 1fr; gap:clamp(30px,4vw,64px); align-items:start; }
+@media (max-width:900px){ .vent__cols{ grid-template-columns:1fr; } }
+
+.vent__media{ display:block; border:1px solid var(--line); border-radius:11px; overflow:hidden; background:#111; transition:transform .55s var(--ease),box-shadow .55s var(--ease),border-color .55s var(--ease); }
+.vent__media:hover{ transform:translateY(-8px); box-shadow:0 40px 90px rgba(0,0,0,.55); border-color:rgba(243,242,238,.35); }
+.vent__shot{ aspect-ratio:16/10; overflow:hidden; }
+.vent__shot img{ width:100%; height:100%; object-fit:cover; object-position:top; transition:transform 1.4s var(--ease); }
+.vent__media:hover .vent__shot img{ transform:scale(1.04); }
+
+.vent__intro{ display:flex; flex-direction:column; align-items:flex-start; gap:26px; }
+.vent__desc{ font-size:clamp(15px,1.35vw,18px); line-height:1.62; color:var(--ink-dim); }
+@media (max-width:900px){ .vent__intro .btn{ width:100%; justify-content:center; } }
+
+.vent__sub{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-dim); font-weight:400;
+  margin:clamp(46px,5vw,72px) 0 22px; padding-top:30px; border-top:1px solid var(--line); }
+
+.vent__divs{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:clamp(16px,1.8vw,26px); }
+.vdiv{ display:flex; flex-direction:column; border:1px solid var(--line); border-radius:9px; overflow:hidden;
+  transition:transform .45s var(--ease),border-color .45s var(--ease),background .45s var(--ease); }
+.vdiv:hover{ transform:translateY(-6px); border-color:rgba(243,242,238,.4); background:rgba(243,242,238,.04); }
+.vdiv__shot{ aspect-ratio:16/10; overflow:hidden; background:#111; border-bottom:1px solid var(--line); }
+.vdiv__shot img{ width:100%; height:100%; object-fit:cover; object-position:top;
+  filter:grayscale(.75) contrast(1.02); transition:transform 1.1s var(--ease),filter .5s; }
+.vdiv:hover .vdiv__shot img{ transform:scale(1.05); filter:grayscale(0); }
+.vdiv__body{ padding:16px 16px 18px; display:flex; flex-direction:column; gap:7px; flex:1; }
+.vdiv__name{ font-family:'Space Grotesk'; font-size:17px; font-weight:600; letter-spacing:-.015em; display:flex; align-items:baseline; gap:7px; }
+.vdiv__name i{ font-style:normal; font-size:13px; opacity:.45; transition:transform .35s var(--ease),opacity .35s; }
+.vdiv:hover .vdiv__name i{ transform:translate(3px,-3px); opacity:1; }
+.vdiv__desc{ font-size:13px; line-height:1.5; color:var(--ink-dim); flex:1; }
+.vdiv__url{ font-family:'Space Grotesk'; font-size:11px; letter-spacing:-.01em; color:var(--ink-dim); opacity:.7; margin-top:4px; }
 
 /* ---------- SEO / client sites (interactive list) ---------- */
 .seo{ padding:clamp(70px,10vw,150px) var(--pad) clamp(50px,7vw,90px); position:relative; }
@@ -306,7 +352,7 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 .skillcol__list{ display:flex; flex-direction:column; gap:4px; }
 .skillcol__list span{ font-family:'Space Grotesk'; font-size:clamp(20px,2.4vw,30px); font-weight:500; letter-spacing:-.01em; transition:transform .4s var(--ease),opacity .3s; opacity:.85; }
 .skillcol__list span:hover{ transform:translateX(10px); opacity:1; }
-@media (min-width:760px){ .skills__grid{ grid-template-columns:repeat(4,1fr); gap:40px; } }
+@media (min-width:760px){ .skills__grid{ grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:40px; } }
 
 /* ---------- about ---------- */
 .about{ padding:clamp(80px,14vw,190px) var(--pad); border-top:1px solid var(--line); }

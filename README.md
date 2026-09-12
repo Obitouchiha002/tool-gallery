@@ -12,9 +12,10 @@ Bas `index.html` ko browser me open karo. Koi build step nahi.
 ```js
 {
   name: "Tool ka naam",
-  category: "AI",              // AI | Web App | Utility | Automation
+  category: "AI",              // AI | Web App | Native App | Utility | Automation
   description: "1 line kya karta hai",
   tech: ["React", "Node"],
+  platforms: ["Android", "Windows"],  // optional — card pe OS badge
   thumbnail: "images/my-tool.jpg",   // khaali "" = auto placeholder
   link: "https://live-url.com",       // khaali "" = "Coming soon"
   year: "2025",
@@ -24,20 +25,23 @@ Bas `index.html` ko browser me open karo. Koi build step nahi.
 
 ## Images
 - `images/` folder me daalo, filename `projects.js` ke `thumbnail` se match karo.
-- Ideal size: **1600 × 1000 px** (16:10). Screenshots best lagte hain.
+- Ideal size: **1280 × 800 px** (16:10). Real screenshots best lagte hain.
 - Image na ho to naam ke initials ka clean placeholder auto ban jayega.
 
+## LZ Worth (venture band)
+`js/projects.js` me `window.VENTURE` — company ka naam, tagline, stats aur `divisions[]`
+(web / automation / youtube / linkedin / instagram). Naya division add karna ho to bas
+ek object `divisions` array me daal do, screenshot `images/` me rakh do.
+
 ## Site info edit
-`js/projects.js` ke neeche `window.SITE` me: naam, email, 2 portfolio links, socials.
+`js/projects.js` ke neeche `window.SITE` me: naam, email, portfolio links, socials.
 
 ## Deploy
 Static hai — Netlify / Vercel / GitHub Pages pe drag-drop / push kar do.
 
+## Résumé
+`assets/Vansh_Kashyap_Resume.pdf`. Source: HTML → Chrome print-to-PDF (A4, ek page).
+
 ---
 
-### 🔗 Mujhe (Claude ko) ye chahiye — bhej do to bhar dunga:
-1. **Har tool ka live link** (jo jo live hain)
-2. **2 portfolio links** (Portfolio 01, 02)
-3. **Social links** (GitHub / LinkedIn / X)
-4. **Screenshots / thumbnails** (optional — na ho to placeholders chal jayenge)
-5. Koi tool **naam/description** badalna ho to bata do
+Saare 18 projects live hain, har card pe real screenshot laga hua hai.
