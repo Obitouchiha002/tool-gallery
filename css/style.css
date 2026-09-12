@@ -134,8 +134,10 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 .hero__title--stroke{ -webkit-text-stroke:1.5px var(--ink); color:transparent; }
 .hero__bottom{ display:flex; justify-content:space-between; align-items:flex-end; gap:40px; flex-wrap:wrap; }
 @media (min-width:821px){ .hero__bottom{ padding-bottom:14px; align-items:flex-end; } }
+.hero__lead{ max-width:440px; }
 .hero__desc{ max-width:440px; color:var(--ink-dim); font-size:clamp(14px,1.4vw,17px); }
 .hero__desc b{ color:var(--ink); font-weight:600; }
+.hero__role{ margin-top:10px; font-size:12px; letter-spacing:.03em; color:var(--ink-dim); }
 .hero__counter{ display:flex; align-items:baseline; gap:14px; }
 .hero__counter-num{ font-family:'Space Grotesk'; font-size:clamp(46px,7vw,92px); font-weight:600; line-height:.8; }
 .hero__counter-label{ font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-dim); }
@@ -148,7 +150,7 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
   /* stop the hero stretching content to the corners of a tall phone screen */
   .hero{ min-height:auto; padding:118px var(--pad) 46px; }
   .hero__title{ margin:44px 0 54px; font-size:clamp(46px,13vw,74px); }
-  .hero__desc{ max-width:100%; }
+  .hero__lead,.hero__desc{ max-width:100%; }
   .hero__counter{ margin-top:26px; }
   .hero__bottom{ gap:0; }
 }
@@ -162,7 +164,7 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 /* ---------- FLAGSHIP spotlight ---------- */
 .flag{ padding:clamp(70px,9vw,130px) var(--pad) clamp(70px,9vw,120px); }
 .flag__head{ max-width:900px; }
-.flag__label{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-dim); }
+.flag__label{ font-weight:400; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-dim); }
 .flag__title{ font-family:'Space Grotesk'; font-weight:600; font-size:clamp(46px,10vw,150px); line-height:.92; letter-spacing:-.04em; margin:14px 0 10px; }
 .flag__tagline{ font-family:'Space Grotesk'; font-size:clamp(18px,2.6vw,36px); font-weight:400; letter-spacing:-.02em; opacity:.62; }
 
@@ -213,6 +215,8 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 .filters button:hover{ color:var(--fg); border-color:var(--fg); }
 .filters button.active{ background:var(--fg); color:var(--bg); border-color:var(--fg); }
 
+.work__note{ margin-top:-16px; padding:0 var(--pad) 30px; max-width:78ch; color:var(--ink-dim); font-size:13.5px; }
+
 /* ---------- grid (compact app-window cards) ---------- */
 .grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(22px,2.6vw,48px); padding:0 var(--pad) 40px; }
 @media (min-width:1500px){ .grid{ grid-template-columns:repeat(3,1fr); } }
@@ -260,10 +264,17 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 .card__ph small{ font-size:10px; letter-spacing:.14em; text-transform:uppercase; opacity:.45; }
 
 .card__foot{ display:flex; align-items:baseline; justify-content:space-between; gap:20px; padding:17px 2px 0; }
+.card__link{ color:inherit; }
+/* Stretched link: keeps the whole card clickable now that the card itself is an
+   <article> rather than one big <a>, so the markup stays semantic for crawlers. */
+.card__link::after{ content:''; position:absolute; inset:0; z-index:4; }
+.card__link:focus-visible{ outline:none; }
+.card:has(.card__link:focus-visible){ outline:2px solid var(--fg); outline-offset:6px; border-radius:6px; }
 .card__name{ font-family:'Space Grotesk'; font-size:clamp(17px,1.5vw,22px); font-weight:600; letter-spacing:-.015em; }
 .card__year{ font-size:12px; color:var(--ink-dim); flex:none; }
 .card__desc{ padding:5px 2px 0; color:var(--ink-dim); font-size:13.5px; max-width:96%; }
 .card__tech{ display:flex; flex-wrap:wrap; gap:7px; padding:12px 2px 0; }
+.card__attr{ padding:11px 2px 0; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-dim); }
 .card__tech span{ font-size:10.5px; letter-spacing:.03em; color:var(--ink-dim); padding:4px 9px; border:1px solid var(--line); border-radius:100px; }
 
 /* ---------- VENTURE band (LZ Worth) ---------- */
@@ -347,7 +358,7 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 .skills__sub{ max-width:320px; color:var(--ink-dim); font-size:15px; }
 .skills__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0; border-top:1px solid var(--line); }
 .skillcol{ padding:34px 0 8px; }
-.skillcol__label{ font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-dim); margin-bottom:22px; display:flex; align-items:center; gap:10px; }
+.skillcol__label{ font-weight:400; font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-dim); margin-bottom:22px; display:flex; align-items:center; gap:10px; }
 .skillcol__label::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--paper); }
 .skillcol__list{ display:flex; flex-direction:column; gap:4px; }
 .skillcol__list span{ font-family:'Space Grotesk'; font-size:clamp(20px,2.4vw,30px); font-weight:500; letter-spacing:-.01em; transition:transform .4s var(--ease),opacity .3s; opacity:.85; }
@@ -356,7 +367,7 @@ a:focus-visible,button:focus-visible{ outline:2px solid currentColor; outline-of
 
 /* ---------- about ---------- */
 .about{ padding:clamp(80px,14vw,190px) var(--pad); border-top:1px solid var(--line); }
-.about__label{ font-size:13px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.05em; }
+.about__label{ font-weight:400; font-size:13px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.05em; }
 .about__text{ font-family:'Space Grotesk'; font-weight:500; font-size:clamp(22px,3.3vw,46px); line-height:1.22; letter-spacing:-.022em; margin:28px 0 40px; max-width:20ch; max-width:min(100%,17em); }
 .about__text span[data-line]{ display:block; overflow:hidden; }
 .about__text span[data-line] > *{ display:inline-block; }

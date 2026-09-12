@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-prerendered>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools &amp; Apps by Vansh Kashyap | AI, Web, Android &amp; Automation</title>
+  <meta name="description" content="Explore tools and apps built by Vansh Kashyap, including AI automation, web apps, Android applications, desktop software and developer utilities." />
+  <meta name="author" content="Vansh Kashyap" />
+  <meta name="theme-color" content="#f3f2ee" />
+
+  <link rel="canonical" href="https://vansh-tools.vercel.app/" />
+
+  <!-- Open Graph / social share -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Vansh Kashyap — Tool Gallery" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:url" content="https://vansh-tools.vercel.app/" />
+  <meta property="og:title" content="Tools &amp; Apps by Vansh Kashyap | AI, Web, Android &amp; Automation" />
+  <meta property="og:description" content="Explore tools and apps built by Vansh Kashyap, including AI automation, web apps, Android applications, desktop software and developer utilities." />
+  <meta property="og:image" content="https://vansh-tools.vercel.app/images/janamjyot.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt" content="JanamJyot — Vedic astrology Android and web app built by Vansh Kashyap" />
+  <meta property="profile:first_name" content="Vansh" />
+  <meta property="profile:last_name" content="Kashyap" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tools &amp; Apps by Vansh Kashyap" />
+  <meta name="twitter:description" content="AI automation, web apps, Android applications, desktop software and developer utilities — built end-to-end by Vansh Kashyap." />
+  <meta name="twitter:image" content="https://vansh-tools.vercel.app/images/janamjyot.jpg" />
+
+  <!-- structured data -->
+  <script type="application/ld+json">
+  {{JSONLD}}
+  </script>
+
+  <!-- favicon (inline, no extra file) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0b'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial' font-size='15' font-weight='bold' fill='%23f3f2ee' text-anchor='middle'%3EVK%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- LCP image: the flagship shot is the largest thing above the fold -->
+  <link rel="preload" as="image" href="images/janamjyot.jpg" fetchpriority="high" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Without JS the reveal animations never run, so show everything as-is. -->
+  <noscript><style>
+    .loader,.cursor,.cursor-dot{ display:none !important; }
+    .card,.vdiv,.seo-row,[data-reveal],.hero__title [data-word],
+    .flag__stat,.flag__chips span,.skillcol,.about__text span > *{
+      opacity:1 !important; transform:none !important;
+    }
+  </style></noscript>
+</head>
+<body>
+
+  <!-- grain / noise overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- custom cursor -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- preloader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__count"><span id="loaderNum">0</span><small>%</small></div>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a href="#top" class="nav__logo" data-hover>VK<span aria-hidden="true">·</span>gallery</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work" data-hover>Work</a>
+      <a href="#venture" data-hover>LZ Worth</a>
+      <a href="#seo" data-hover>Clients</a>
+      <a href="#skills" data-hover>Skills</a>
+      <a href="#about" data-hover>About</a>
+      {{NAV_PORTFOLIOS}}
+      <a href="#contact" class="nav__cta" data-hover>Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero__meta">
+        <span class="hero__tag" data-reveal><span aria-hidden="true">◇</span> Tool Gallery</span>
+        <span class="hero__avail" data-reveal><i aria-hidden="true"></i> Available for work — Delhi / Remote</span>
+      </div>
+
+      <h1 class="hero__title" id="heroTitle">
+        <span class="line"><span data-word>BUILDER</span></span>
+        <span class="line"><span data-word>OF</span> <span data-word class="hero__title--stroke">DIGITAL</span></span>
+        <span class="line"><span data-word>TOOLS</span></span>
+      </h1>
+
+      <div class="hero__bottom">
+        <div class="hero__lead">
+          <p class="hero__desc" data-reveal>
+            A living archive of Android apps, desktop software, web apps
+            &amp; automations — built end&#8209;to&#8209;end by <b id="heroName">Vansh Kashyap</b>.
+          </p>
+          <p class="hero__role" data-reveal>Vansh Kashyap · AI Automation &amp; Full&#8209;Stack Developer · New Delhi, India</p>
+        </div>
+        <a href="#work" class="hero__scroll" data-hover>
+          <span>Scroll to explore</span>
+          <span class="hero__scroll-line" aria-hidden="true"></span>
+        </a>
+
+        <div class="hero__counter" data-reveal>
+          <span class="hero__counter-num" id="toolCount" data-count="{{PROJECT_COUNT}}">{{PROJECT_COUNT}}</span>
+          <span class="hero__counter-label">Projects shipped<br/>&amp; counting</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee invert" aria-hidden="true">
+      <div class="marquee__track" id="marquee">{{MARQUEE_ITEMS}}</div>
+    </div>
+
+    <!-- ============ FLAGSHIP ============ -->
+    <section class="flag invert" id="flagship">{{FLAGSHIP}}
+    </section>
+
+    <!-- ============ WORK / GRID ============ -->
+    <section class="work" id="work">
+      <div class="section-head">
+        <h2 class="section-head__title" data-reveal>Selected <em>Tools</em></h2>
+        <div class="filters" id="filters" role="group" aria-label="Filter tools by category">
+          {{FILTERS}}
+        </div>
+      </div>
+
+      <p class="work__note">Designed and built by Vansh Kashyap — personal products, plus tools built at LZ Worth and Grivaa Capital. Attribution is noted on each card where it differs.</p>
+
+      <div class="grid" id="grid">
+{{GRID}}
+      </div>
+    </section>
+
+    <!-- ============ VENTURE / LZ WORTH ============ -->
+    <section class="vent invert" id="venture">{{VENTURE}}
+    </section>
+
+    <!-- ============ CLIENT SITES ============ -->
+    <section class="seo" id="seo">
+      <div class="seo__head">
+        <div>
+          <span class="seo__tag">(Client work — paid)</span>
+          <h2 class="seo__title">Shipped for <em>Clients</em></h2>
+        </div>
+        <p class="seo__note">Live business websites built and maintained by Vansh Kashyap for other companies — technical SEO, structured data and performance work. The businesses themselves are owned by their respective clients.</p>
+      </div>
+      <div class="seo-list" id="seoList">{{SEO_LIST}}
+      </div>
+      <div class="seo-preview" id="seoPreview" aria-hidden="true"><img alt="" /></div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="skills invert" id="skills">
+      <div class="skills__head">
+        <h2 class="skills__title" data-reveal>What I work with</h2>
+        <p class="skills__sub" data-reveal>Full-stack toolkit — from pixel-perfect React frontends to AI systems &amp; automations that run themselves.</p>
+      </div>
+      <div class="skills__grid" id="skillsGrid">{{SKILLS}}
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <h2 class="about__label" data-reveal>(About)</h2>
+      <p class="about__text">
+        <span data-line>I build for the web, for Android</span>
+        <span data-line>and for the desktop — plus the</span>
+        <span data-line>AI automations behind them.</span>
+        <span data-line>This gallery collects everything</span>
+        <span data-line>I've shipped. Each tool solves</span>
+        <span data-line>a real problem, end to end.</span>
+      </p>
+      <dl class="about__facts">
+        <div><dt>Role</dt><dd>Web, Mobile &amp; AI Automation Developer — full-stack</dd></div>
+        <div><dt>Currently</dt><dd>Co-founder at <a href="https://lzworth.in" target="_blank" rel="noopener">LZ Worth</a> · Web developer at <a href="https://grivaacapital.com/" target="_blank" rel="noopener">Grivaa Capital</a></dd></div>
+        <div><dt>Based in</dt><dd>New Delhi, India · Working remote</dd></div>
+        <div><dt>Open to</dt><dd>Freelance projects &amp; full-time roles</dd></div>
+      </dl>
+
+      <div class="about__links">
+        <a class="about__resume" href="assets/Vansh_Kashyap_Resume.pdf" target="_blank" rel="noopener" data-hover>Download résumé (PDF) ↓</a>
+        {{ABOUT_PORTFOLIOS}}
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact invert" id="contact">
+      <span class="contact__label" data-reveal>(Let's talk)</span>
+      <h2 class="contact__big" data-reveal>Let's build<br/><em>something good.</em></h2>
+
+      <p class="contact__avail" data-reveal>
+        <span class="contact__dot" aria-hidden="true"></span>
+        Available for freelance projects &amp; full-time roles — usually replies within a day.
+      </p>
+
+      <div class="contact__actions">
+        <a class="btn btn--solid" href="https://wa.me/918800628376" target="_blank" rel="noopener" data-hover>WhatsApp me ↗</a>
+        <a class="btn btn--ghost" id="contactMail" href="mailto:{{EMAIL}}" data-hover>Send an email ↗</a>
+      </div>
+
+      <div class="contact__socials" id="socials">
+        {{SOCIALS}}
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <span>© <span id="year">{{YEAR}}</span> Vansh Kashyap</span>
+    <div class="footer__ports" id="footerPorts">
+      <a href="assets/Vansh_Kashyap_Resume.pdf" target="_blank" rel="noopener" data-hover>Résumé</a>
+      {{FOOTER_PORTS}}
+    </div>
+    <a href="#top" data-hover>Back to top ↑</a>
+  </footer>
+
+  <!-- Scripts (CDN) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script defer src="js/projects.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+</html>

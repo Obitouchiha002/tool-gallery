@@ -2,9 +2,24 @@
 
 Ek premium, dark minimal-mono portfolio jaisi tool gallery — saare apps, tools & automations ek jagah.
 
+## ⚠️ Sabse pehle ye samjho — index.html ab GENERATED hai
+`index.html` ko **haath se mat edit karo**. Wo banta hai:
+
+```
+index.template.html  +  js/projects.js   →   node tools/prerender.mjs   →   index.html
+```
+
+Kyun: pehle saara content JS se banta tha, isliye Google / ChatGPT / Gemini /
+Perplexity ko tool ke naam tak nahi dikhte the. Ab poora HTML pehle se static hota
+hai aur JS sirf usi ko animate karta hai.
+
+- **Layout / section badalna hai?** → `index.template.html`
+- **Tool ya data badalna hai?** → `js/projects.js`
+- **Dono me se kuch bhi badla?** → `node tools/prerender.mjs` chalao, phir deploy
+
 ## Chalao (Run)
-Bas `index.html` ko browser me open karo. Koi build step nahi.
-(Ya VS Code me **Live Server** extension se — better, kyunki thumbnails/images load hote hain.)
+`node tools/prerender.mjs` chalao, phir `index.html` browser me kholo.
+(Ya VS Code me **Live Server** extension se — better, kyunki images load hote hain.)
 
 ## Naya tool add karna
 `js/projects.js` kholo aur ek block copy-paste karo:
@@ -38,6 +53,18 @@ ek object `divisions` array me daal do, screenshot `images/` me rakh do.
 
 ## Deploy
 Static hai — Netlify / Vercel / GitHub Pages pe drag-drop / push kar do.
+
+## Crawler check
+Kuch bhi badalne ke baad ye zaroor dekho — JS off karke bhi sab dikhna chahiye:
+
+```
+node tools/prerender.mjs
+grep -c 'class="card"' index.html      # 14 tool cards
+grep -o '18' index.html | head -1      # counter static hai, "00" nahi
+```
+
+Browser me DevTools → Settings → Debugger → *Disable JavaScript* karke reload karo.
+Saare tool naam, description aur LZ Worth section tab bhi dikhne chahiye.
 
 ## Résumé
 `assets/Vansh_Kashyap_Resume.pdf`. Source: HTML → Chrome print-to-PDF (A4, ek page).

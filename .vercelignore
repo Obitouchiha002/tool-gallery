@@ -1,0 +1,13 @@
+# Build inputs — index.html is generated from these, they must not be served.
+index.template.html
+tools/
+
+# Local / VCS noise
+.git
+.env*
+.vercel
+node_modules
+*.log
+.DS_Store
+_audit*.html
+_test.html

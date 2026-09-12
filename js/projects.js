@@ -14,6 +14,8 @@
      year        : "2025"
      featured    : true  → bada dikhega (max 2-3 rakho)
      seo         : true  → grid ke bajaye "Shipped for Clients" list me jaayega
+     attribution : "personal" (default) | "employer" | "client"  — kiska product hai
+     appCategory : schema.org applicationCategory (SEO ke liye)
    ========================================================================= */
 
 window.PROJECTS = [
@@ -24,6 +26,7 @@ window.PROJECTS = [
     description: "Video & audio downloader for Android, Windows and macOS — real streams up to 4K, merged without re-encoding, plus proper MP3 with cover art.",
     tech: ["Android", "Desktop", "yt-dlp", "ffmpeg"],
     platforms: ["Android", "Windows", "macOS"],
+    appCategory: "MultimediaApplication",
     thumbnail: "images/streamgarden.jpg",
     link: "https://streamgd.lzworth.in",
     year: "2026",
@@ -35,6 +38,7 @@ window.PROJECTS = [
     description: "An Android file vault that opens as a working notes app — AES-256-GCM encryption, Argon2id keys, nothing ever leaves the device.",
     tech: ["Android", "Kotlin", "AES-256", "Argon2id"],
     platforms: ["Android"],
+    appCategory: "SecurityApplication",
     thumbnail: "images/truevault.jpg",
     link: "https://truevault.lzworth.in",
     year: "2026",
@@ -46,6 +50,7 @@ window.PROJECTS = [
     description: "A floating eye that makes any on-screen text copyable — Reels, videos, PDFs and apps that block selection. On-device OCR in English & Hindi.",
     tech: ["Android", "On-device OCR", "Kotlin"],
     platforms: ["Android"],
+    appCategory: "UtilitiesApplication",
     thumbnail: "images/copyeye.jpg",
     link: "https://copyeye.lzworth.in",
     year: "2026",
@@ -59,6 +64,7 @@ window.PROJECTS = [
     description: "Five AI rooms in one app — a Council that argues with itself, a mentor, a psychologist, a teacher and four Urdu poets. Web, web app and Android.",
     tech: ["AI", "Android", "PWA", "React"],
     platforms: ["Web", "Web App", "Android"],
+    appCategory: "LifestyleApplication",
     thumbnail: "images/aura-shakti.jpg",
     link: "https://aura.lzworth.in",
     year: "2026",
@@ -67,8 +73,10 @@ window.PROJECTS = [
   {
     name: "Grivaa AI Command Center",
     category: "AI",
-    description: "Secure AI workspace for content, SEO & ops across all brands.",
-    tech: ["Vite", "AI", "React"],
+    description: "Internal AI workspace for social content, scheduling and analytics across the firm's brands.",
+    tech: ["Next.js", "Supabase", "AI"],
+    attribution: "employer",
+    appCategory: "BusinessApplication",
     thumbnail: "images/grivaa-command-center.jpg",
     link: "https://grivaa-command-center.vercel.app",
     year: "2025",
@@ -77,8 +85,9 @@ window.PROJECTS = [
   {
     name: "AI Stock Research Dashboard",
     category: "AI",
-    description: "AI-driven equity research, signals & portfolio insights.",
+    description: "AI stock-research terminal spanning US, NSE and BSE markets — screening, alerts and an AI research chat over the data.",
     tech: ["AI", "Data Viz", "React"],
+    appCategory: "FinanceApplication",
     thumbnail: "images/stockanalytix.jpg",
     link: "https://stockanalytix.vercel.app",
     year: "2025",
@@ -87,8 +96,9 @@ window.PROJECTS = [
   {
     name: "Vedic Astra",
     category: "AI",
-    description: "AI-powered Vedic astrology — charts, dashas & predictions.",
+    description: "AI-assisted Vedic astrology on the web — birth charts, planetary periods and interpretation in plain language.",
     tech: ["AI", "React", "Node"],
+    appCategory: "LifestyleApplication",
     thumbnail: "images/vedicastra.jpg",
     link: "https://vedicastra.vercel.app",
     year: "2025",
@@ -101,6 +111,7 @@ window.PROJECTS = [
     category: "Web App",
     description: "A whiteboard studio in the browser — draw, build cards, generate a whole board from a script, then record the explainer.",
     tech: ["Canvas", "PWA", "JavaScript"],
+    appCategory: "DesignApplication",
     thumbnail: "images/explainer-studio.jpg",
     link: "https://tech-by-vansh-studio.vercel.app/",
     year: "2026",
@@ -111,6 +122,7 @@ window.PROJECTS = [
     category: "Web App",
     description: "The real Kali Linux desktop streamed into a browser tab — full XFCE, nmap, Metasploit, sqlmap and a sealed WiFi lab. No ISO, no VirtualBox.",
     tech: ["Kali Linux", "Containers", "Desktop Streaming"],
+    appCategory: "DeveloperApplication",
     thumbnail: "images/kali.jpg",
     link: "https://kali.lzworth.in",
     year: "2026",
@@ -119,8 +131,9 @@ window.PROJECTS = [
   {
     name: "Safety Circle",
     category: "Web App",
-    description: "Personal safety & location-sharing circle for families.",
-    tech: ["App", "Realtime", "Maps"],
+    description: "Personal safety app for families — a private circle that shares live location and raises an alert when someone needs help.",
+    tech: ["Realtime", "Maps", "React"],
+    appCategory: "HealthApplication",
     thumbnail: "images/safety-circle.jpg",
     link: "https://safety-circle.vercel.app",
     year: "2025",
@@ -131,6 +144,7 @@ window.PROJECTS = [
     category: "Web App",
     description: "Temporary and permanent chat rooms — join with a code, one-to-one or group. Temporary messages disappear when the session ends.",
     tech: ["React", "Realtime", "Supabase"],
+    appCategory: "CommunicationApplication",
     thumbnail: "images/vanshlink.jpg",
     link: "https://vanshlink.vercel.app/",
     year: "2025",
@@ -139,8 +153,9 @@ window.PROJECTS = [
   {
     name: "Aura Music Player",
     category: "Web App",
-    description: "Local music player — scan device, focus mode & library.",
+    description: "Music player for files already on your device — scans local storage, builds a library and has a distraction-free focus mode.",
     tech: ["React", "Audio", "PWA"],
+    appCategory: "MultimediaApplication",
     thumbnail: "images/aura-player.jpg",
     link: "https://aura-player-nine.vercel.app/",
     year: "2025",
@@ -151,8 +166,10 @@ window.PROJECTS = [
   {
     name: "Creator Tracker",
     category: "Automation",
-    description: "AI automation system that tracks & runs creator workflows on autopilot.",
+    description: "AI research dashboard that tracks creator trends and turns them into data-backed content ideas, on an n8n schedule.",
     tech: ["n8n", "AI", "APIs"],
+    attribution: "employer",
+    appCategory: "BusinessApplication",
     thumbnail: "images/creator-tracker.jpg",
     link: "https://tracker.grivaacapital.com/",
     year: "2025",
@@ -163,8 +180,9 @@ window.PROJECTS = [
   {
     name: "vthumb",
     category: "Utility",
-    description: "Download high-resolution YouTube thumbnails in one click.",
+    description: "Paste a YouTube URL and pull its thumbnail at full resolution, in one click. No sign-up, no watermark.",
     tech: ["JS", "Utility", "Web"],
+    appCategory: "UtilitiesApplication",
     thumbnail: "images/vthumb.jpg",
     link: "https://vthumb.vercel.app/",
     year: "2025",
@@ -181,6 +199,7 @@ window.PROJECTS = [
     link: "https://www.realtyresolve.in/",
     year: "2025",
     featured: false,
+    attribution: "client",
     seo: true
   },
   {
@@ -192,6 +211,7 @@ window.PROJECTS = [
     link: "https://grivaacapital.com/",
     year: "2025",
     featured: false,
+    attribution: "client",
     seo: true
   },
   {
@@ -203,6 +223,7 @@ window.PROJECTS = [
     link: "https://abhishekaggarwal.co/",
     year: "2025",
     featured: false,
+    attribution: "client",
     seo: true
   },
 ];
@@ -302,11 +323,12 @@ window.SITE = {
   role: "Co-founder, LZ Worth · Web, Mobile & AI Automation Developer",
   tagline: "I build products that work — and workflows that run without you.",
   email: "vk1234888i@gmail.com",
+  // Pehle do primary hain — nav + About me yahi dikhte hain. Baaki mirrors footer me.
   portfolios: [
-    { label: "Portfolio 01", url: "https://vanshkashyap.lzworth.in" },
-    { label: "Portfolio 02", url: "https://techbyvansh.lzworth.in" },
-    { label: "Portfolio 03", url: "https://vanshkashyap.vercel.app" },
-    { label: "Portfolio 04", url: "https://techbyvansh.vercel.app" }
+    { label: "Vansh Portfolio", url: "https://vanshkashyap.lzworth.in" },
+    { label: "Tech by Vansh",   url: "https://techbyvansh.lzworth.in" },
+    { label: "Portfolio (mirror)",     url: "https://vanshkashyap.vercel.app" },
+    { label: "Tech by Vansh (mirror)", url: "https://techbyvansh.vercel.app" }
   ],
   socials: [
     { label: "LinkedIn",  url: "https://www.linkedin.com/in/vansh-kashyap-32a46a2a6" },
