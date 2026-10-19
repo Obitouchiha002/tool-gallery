@@ -71,18 +71,6 @@ window.PROJECTS = [
     featured: true
   },
   {
-    name: "Grivaa AI Command Center",
-    category: "AI",
-    description: "Internal AI workspace for social content, scheduling and analytics across the firm's brands.",
-    tech: ["Next.js", "Supabase", "AI"],
-    attribution: "employer",
-    appCategory: "BusinessApplication",
-    thumbnail: "images/grivaa-command-center.jpg",
-    link: "https://grivaa-command-center.vercel.app",
-    year: "2025",
-    featured: true
-  },
-  {
     name: "AI Stock Research Dashboard",
     category: "AI",
     description: "AI stock-research terminal spanning US, NSE and BSE markets — screening, alerts and an AI research chat over the data.",
@@ -162,19 +150,6 @@ window.PROJECTS = [
     featured: false
   },
 
-  /* ---------- AUTOMATION ---------- */
-  {
-    name: "Creator Tracker",
-    category: "Automation",
-    description: "AI research dashboard that tracks creator trends and turns them into data-backed content ideas, on an n8n schedule.",
-    tech: ["n8n", "AI", "APIs"],
-    attribution: "employer",
-    appCategory: "BusinessApplication",
-    thumbnail: "images/creator-tracker.jpg",
-    link: "https://tracker.grivaacapital.com/",
-    year: "2025",
-    featured: false
-  },
 
   /* ---------- UTILITY ---------- */
   {
@@ -189,41 +164,25 @@ window.PROJECTS = [
     featured: false
   },
 
-  /* ---------- CLIENT WORK (seo:true → alag list section me jaate hain) ---------- */
+  /* ---------- PERSONAL SITES (seo:true → alag list section me jaate hain) ---------- */
   {
-    name: "RealtyResolve",
+    name: "Vansh Portfolio",
     category: "Web App",
-    description: "Legal-tech platform for property disputes — RERA, NRI & tax notices.",
-    tech: ["Next.js", "Legal Tech", "SEO"],
-    thumbnail: "images/realtyresolve.jpg",
-    link: "https://www.realtyresolve.in/",
-    year: "2025",
-    featured: false,
-    attribution: "client",
-    seo: true
-  },
-  {
-    name: "Grivaa Capital",
-    category: "Web App",
-    description: "Investment advisory website — technical SEO & schema.",
-    tech: ["Next.js", "SEO", "Schema"],
-    thumbnail: "images/grivaa-capital.jpg",
-    link: "https://grivaacapital.com/",
-    year: "2025",
-    featured: false,
-    attribution: "client",
-    seo: true
-  },
-  {
-    name: "Abhishek Aggarwal",
-    category: "Web App",
-    description: "Personal authority & finance brand site — SEO build.",
+    description: "Personal portfolio of Vansh Kashyap — projects, experience and contact.",
     tech: ["Web", "SEO", "Schema"],
-    thumbnail: "images/abhishek-aggarwal.jpg",
-    link: "https://abhishekaggarwal.co/",
+    link: "https://vanshkashyap.lzworth.in",
     year: "2025",
     featured: false,
-    attribution: "client",
+    seo: true
+  },
+  {
+    name: "Tech by Vansh",
+    category: "Web App",
+    description: "Vansh Kashyap's tech brand site — web development and AI automation.",
+    tech: ["Web", "SEO", "Schema"],
+    link: "https://techbyvansh.lzworth.in",
+    year: "2025",
+    featured: false,
     seo: true
   },
 ];
@@ -326,9 +285,7 @@ window.SITE = {
   // Pehle do primary hain — nav + About me yahi dikhte hain. Baaki mirrors footer me.
   portfolios: [
     { label: "Vansh Portfolio", url: "https://vanshkashyap.lzworth.in" },
-    { label: "Tech by Vansh",   url: "https://techbyvansh.lzworth.in" },
-    { label: "Portfolio (mirror)",     url: "https://vanshkashyap.vercel.app" },
-    { label: "Tech by Vansh (mirror)", url: "https://techbyvansh.vercel.app" }
+    { label: "Tech by Vansh",   url: "https://techbyvansh.lzworth.in" }
   ],
   socials: [
     { label: "LinkedIn",  url: "https://www.linkedin.com/in/techbyvansh" },

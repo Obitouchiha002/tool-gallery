@@ -280,8 +280,8 @@ const clientNodes = CLIENTS.map(p => ({
   name: p.name,
   description: p.description,
   url: p.link,
-  // Vansh built and maintains these sites; he does not own the businesses.
-  contributor: { '@id': PERSON_ID }
+  // Client sites: Vansh built them, the business owns them. Personal sites: his own.
+  [p.attribution === 'client' ? 'contributor' : 'author']: { '@id': PERSON_ID }
 }));
 
 const allWorks = [flagshipNode, ...softwareNodes];
